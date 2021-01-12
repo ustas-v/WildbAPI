@@ -1,0 +1,5 @@
+api:
+  wildberries:
+    supplier:
+      base_uri: 'https://suppliers-stats.wildberries.ru/api/'
+      key: 'api-key'
