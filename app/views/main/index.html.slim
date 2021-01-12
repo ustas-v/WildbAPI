@@ -1,0 +1,7 @@
+h1 Wildberries:
+p
+  | #{@items_on_stocks.quantity_full} шт. / #{Money.new(@items_on_stocks.price_units).format} на складе
+p
+  | #{@items_to_clients.in_way_to_client} шт. / #{Money.new(@items_to_clients.price_units).format} едет к клиенту
+p
+  | #{@items_from_clients.in_way_from_client} шт. / -#{Money.new(@items_from_clients.price_units).format} едет от клиента

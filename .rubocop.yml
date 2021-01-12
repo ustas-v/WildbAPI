@@ -1,0 +1,84 @@
+require: rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/schema.rb'
+    - 'tmp/**/*'
+    - 'db/*.rb'
+    - 'lib/templates/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'config.ru'
+    - 'config/environments/*.rb'
+  TargetRubyVersion: 2.7.2
+
+Layout/SpaceBeforeBrackets: # (new in 1.7)
+  Enabled: true
+Lint/AmbiguousAssignment: # (new in 1.7)
+  Enabled: true
+Lint/DuplicateBranch: # (new in 1.3)
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement: # (new in 1.1)
+  Enabled: true
+Lint/EmptyBlock: # (new in 1.1)
+  Enabled: true
+Lint/EmptyClass: # (new in 1.3)
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks: # (new in 1.2)
+  Enabled: true
+Lint/ToEnumArguments: # (new in 1.1)
+  Enabled: true
+Lint/UnexpectedBlockArity: # (new in 1.5)
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator: # (new in 1.1)
+  Enabled: true
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+Style/CollectionCompact: # (new in 1.2)
+  Enabled: true
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
+  Enabled: true
+Style/HashExcept: # (new in 1.7)
+  Enabled: true
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
+Style/SwapValues: # (new in 1.1)
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+Lint/UselessAccessModifier:
+  Enabled: false
+Layout/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 30
+Metrics/AbcSize:
+  Max: 25
+Metrics/BlockLength:
+  IgnoredMethods: ['namespace']
+  Exclude:
+    - config/routes.rb
+    - spec/**/*
+    - namespace
+RSpec/NestedGroups:
+  Max: 4
+RSpec/ExampleLength:
+  Max: 10
+Style/RescueModifier:
+  Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
