@@ -33,27 +33,6 @@ class Wildberry < ApplicationRecord
   ## Scopes
   ## Other meta methods
 
-  # TODO: Need to remove in Query object
-  class << self
-    def items_on_stocks
-      select(
-        'SUM(quantity_full) AS quantity_full, SUM(price_units * quantity_full) AS price_units'
-      ).take
-    end
-
-    def items_to_clients
-      select(
-        'SUM(in_way_to_client) AS in_way_to_client, SUM(price_units * in_way_to_client) AS price_units'
-      ).take
-    end
-
-    def items_from_clients
-      select(
-        'SUM(in_way_from_client) AS in_way_from_client, SUM(price_units * in_way_from_client) AS price_units'
-      ).take
-    end
-  end
-
   ## Protected methods
   ## Callbacks and etc.
   protected

@@ -24,8 +24,10 @@ class MainController < ApplicationController
   private
 
   def fetch_index_data
-    @items_on_stocks    = Wildberry.items_on_stocks
-    @items_to_clients   = Wildberry.items_to_clients
-    @items_from_clients = Wildberry.items_from_clients
+    query = Queries::Wildberries::MainItems.run!
+
+    @items_on_stocks    = query.items_on_stocks
+    @items_to_clients   = query.items_to_clients
+    @items_from_clients = query.items_from_clients
   end
 end

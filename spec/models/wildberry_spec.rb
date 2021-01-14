@@ -40,7 +40,20 @@ describe Wildberry, type: :model do
   end
 
   describe 'Database structure' do
-    # Describe database structure of model
+    specify { should have_db_column(:id) }
+    specify { should have_db_column(:quantity).of_type(:integer).with_options(null: false, default: 0) }
+    specify { should have_db_column(:quantity_full).of_type(:integer).with_options(null: false, default: 0) }
+    specify { should have_db_column(:quantity_not_in_orders).of_type(:integer).with_options(null: false, default: 0) }
+    specify { should have_db_column(:warehouse_name).of_type(:string).with_options(null: true) }
+    specify { should have_db_column(:in_way_to_client).of_type(:integer).with_options(null: false, default: 0) }
+    specify { should have_db_column(:in_way_from_client).of_type(:integer).with_options(null: false, default: 0) }
+    specify { should have_db_column(:subject).of_type(:string).with_options(null: true) }
+    specify { should have_db_column(:category).of_type(:string).with_options(null: true) }
+    specify { should have_db_column(:brand).of_type(:string).with_options(null: true) }
+    specify { should have_db_column(:price_units).of_type(:integer).with_options(null: false, default: 0) }
+    specify { should have_db_column(:price_currency).of_type(:string).with_options(null: false, default: 'RUB') }
+    specify { should have_db_column(:nmid).of_type(:integer).with_options(null: false) }
+    specify { should have_db_column(:last_change_date).of_type(:datetime).with_options(null: true) }
   end
 
   describe 'Callbacks' do
